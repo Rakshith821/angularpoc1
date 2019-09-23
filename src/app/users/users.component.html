@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col-md-3" *ngFor="let user of users">
+      <h4>Name: {{user.name}}</h4><br>
+      <span>Age: {{user.age}}</span>
+    </div>
+  </div>
+  <button (click)="flag = !flag">
+    <ng-template [ngIf]="flag" [ngIfElse]="flagoff">
+      <span>Toggle button true</span>
+    </ng-template>
+    <ng-template #flagoff>
+      <span>Toggle button false</span>
+    </ng-template>
+  </button>
+  <ng-template [ngIf]="flag" [ngIfElse]="otherpara">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nesciunt, neque incidunt rem delectus vero,
+      tenetur laudantium ducimus sint explicabo magnam non? Ipsum facilis totam, recusandae odio earum qui deserunt.</p>
+  </ng-template>
+  <ng-template #otherpara>
+    <p>Else Para Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae illum commodi saepe sed reprehenderit
+      consequatur et impedit veritatis. Repellat perspiciatis quasi modi autem? Dicta omnis atque soluta placeat nemo in
+      fugiat, libero nobis dignissimos explicabo esse obcaecati natus nulla. Tempore vero, cupiditate repellat adipisci
+      eaque at laborum corporis cum eius!</p>
+  </ng-template>
+</div>
